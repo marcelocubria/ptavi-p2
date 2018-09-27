@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from calcoohija import CalculadoraHija
+from calculadorahija import CalculadoraHija
 
 
 if __name__ == "__main__":
