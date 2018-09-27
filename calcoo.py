@@ -25,4 +25,4 @@ if __name__ == "__main__":
     else:
         sys.exit('Operación sólo puede ser sumar o restar.')
 
-    print("The result of, sys.argv[1], sys.argv[2], sys.argv[3], "is", result)
+    print("The result of", sys.argv[1], sys.argv[2], sys.argv[3], "is", result)
