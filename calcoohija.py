@@ -17,20 +17,22 @@ class CalculadoraHija(Calculadora):
 
 
 if __name__ == "__main__":
+    calculadora1 = CalculadoraHija()
     try:
-        calculadora1 = CalculadoraHija()
+        operando1 = int(sys.argv[1])
+        operando2 = int(sys.argv[3])
     except ValueError:
         sys.exit("Error: Non numerical parameters")
 
     if sys.argv[2] == "suma":
-        result = calculadora1.suma(int(sys.argv[1]), int(sys.argv[3]))
+        result = calculadora1.suma(operando1, operando2)
     elif sys.argv[2] == "resta":
-        result = calculadora1.resta(int(sys.argv[1]), int(sys.argv[3]))
-    elif sys.argv[2] == "multiplicacion":
-        result = calculadora1.mult(int(sys.argv[1]), int(sys.argv[3]))
-    elif sys.argv[2] == "division":
-        result = calculadora1.div(int(sys.argv[1]), int(sys.argv[3]))
+        result = calculadora1.resta(operando1, operando2)
+    elif sys.argv[2] == "multiplica":
+        result = calculadora1.mult(operando1, operando2)
+    elif sys.argv[2] == "divide":
+        result = calculadora1.div(operando1, operando2)
     else:
         sys.exit('Operación sólo puede ser sumar o restar.')
 
-    print("The result of", sys.argv[1], sys.argv[2], sys.argv[3], "is", result)
+    print("The result of", operando1, sys.argv[2], operando2, "is", result)
