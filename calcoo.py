@@ -2,14 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-
-
-class Calculadora():
-    def suma(self, operador1, operador2):
-        return (operador1 + operador2)
-
-    def resta(self, operador1, operador2):
-        return (operador1 - operador2)
+from calculadora import Calculadora
 
 
 if __name__ == "__main__":
