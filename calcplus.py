@@ -7,22 +7,42 @@ from calcoohija import CalculadoraHija
 
 if __name__ == "__main__":
     nombre_fichero = sys.argv[1]
-    fichero = open(nombre_fichero)
-    calculadora1 = CalculadoraHija();
+    try:
+        fichero = open(nombre_fichero)
+    except IOError:
+        sys.exit("No existe el fichero indicado")
+    calculadora1 = CalculadoraHija()
 
     for line in fichero.readlines():
         operacion_valores = line.split(',')
         acumulador = int(operacion_valores[1])
         if operacion_valores[0] == "suma":
-            for valor in operacion_valores[2:]:
-                acumulador = calculadora1.suma(acumulador, int(valor))
+            try:
+                for valor in operacion_valores[2:]:
+                    acumulador = calculadora1.suma(acumulador, int(valor))
+                print(acumulador)
+            except ValueError:
+                print("Un valor en la suma no es valido")
         elif operacion_valores[0] == "resta":
-            for valor in operacion_valores[2:]:
-                acumulador = calculadora1.resta(acumulador, int(valor))
+            try:
+                for valor in operacion_valores[2:]:
+                    acumulador = calculadora1.resta(acumulador, int(valor))
+                print(acumulador)
+            except ValueError:
+                print("Un valor en la resta no es valido")
         elif operacion_valores[0] == "multiplica":
-            for valor in operacion_valores[2:]:
-                acumulador = calculadora1.mult(acumulador, int(valor))
+            try:
+                for valor in operacion_valores[2:]:
+                    acumulador = calculadora1.mult(acumulador, int(valor))
+                print(acumulador)
+            except ValueError:
+                print("Un valor en la multiplicación no es valido")
         elif operacion_valores[0] == "divide":
-            for valor in operacion_valores[2:]:
-                acumulador = calculadora1.div(acumulador, int(valor))
-        print(acumulador)
+            try:
+                for valor in operacion_valores[2:]:
+                    acumulador = calculadora1.div(acumulador, int(valor))
+                print(acumulador)
+            except ValueError:
+                print("Un valor en la división no es valido")
+        else:
+            print("Las operaciones son: suma, resta, multiplica y divide")
