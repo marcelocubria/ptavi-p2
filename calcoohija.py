@@ -22,6 +22,6 @@ if __name__ == "__main__":
     elif sys.argv[2] == "divide":
         result = calculadora1.div(operando1, operando2)
     else:
-        sys.exit('Operación sólo puede ser sumar o restar.')
+        sys.exit('Operación sólo puede ser suma, resta, multiplica o divide.')
 
     print("The result of", operando1, sys.argv[2], operando2, "is", result)
