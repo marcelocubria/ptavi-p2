@@ -3,7 +3,7 @@
 
 import sys
 import csv
-from calculadora import CalculadoraHija
+from calcoohija import CalculadoraHija
 
 
 if __name__ == "__main__":
